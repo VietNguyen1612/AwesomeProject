@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -24,12 +24,12 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+import RTNCenteredText from 'rtn-centered-text/js/RTNCenteredTextNativeComponent';
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): JSX.Element {
+function Section({ children, title }: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -42,6 +42,7 @@ function Section({children, title}: SectionProps): JSX.Element {
         ]}>
         {title}
       </Text>
+
       <Text
         style={[
           styles.sectionDescription,
@@ -64,7 +65,11 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar
+      <RTNCenteredText
+        text="Hello World!"
+
+      />
+      {/* <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
@@ -77,9 +82,10 @@ function App(): JSX.Element {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            Edit <Text style={styles.highlight}></Text> to change this
             screen and then come back to see your edits.
           </Section>
+
           <Section title="See Your Changes">
             <ReloadInstructions />
           </Section>
@@ -91,7 +97,7 @@ function App(): JSX.Element {
           </Section>
           <LearnMoreLinks />
         </View>
-      </ScrollView>
+      </ScrollView> */}
     </SafeAreaView>
   );
 }
