@@ -25,6 +25,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import RTNCenteredText from 'rtn-centered-text/js/RTNCenteredTextNativeComponent';
+import MapView from './MapView';
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -65,10 +66,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <RTNCenteredText
-        text="Hello World!"
-
-      />
+      <MapView></MapView>
       {/* <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}

@@ -1,7 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -9,6 +13,9 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+        <!-- This should be a child of the application tag -->
+        <meta-data android:name="MAPBOX_ACCESS_TOKEN"
+            android:value="pk.eyJ1IjoidmlldG5ndXllbjEyMyIsImEiOiJjbG93eW9rYjEwYm53MmtwaWFlY2V6NjI0In0.Wt4Nz7TbLXPj01uoH2nTJQ" />
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
